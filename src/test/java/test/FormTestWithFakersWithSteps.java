@@ -1,6 +1,8 @@
 package test;
 
+import Config.WebConfig;
 import com.github.javafaker.Faker;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,8 +36,9 @@ public class FormTestWithFakersWithSteps extends TestBase {
                 currentAddress = faker.address().fullAddress(),
                 state = "NCR",
                 city = "Delhi";
+        final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
 
-        step("Open students registration form", () -> open("https://demoqa.com/automation-practice-form"));
+        step("Open students registration form", () -> open(config.getBaseURL()));
 
         step("Fill students registration form", () -> {
             $("#firstName").setValue(firstName);

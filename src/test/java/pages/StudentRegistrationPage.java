@@ -1,6 +1,8 @@
 package pages;
 
+import Config.WebConfig;
 import io.qameta.allure.Step;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -27,9 +29,11 @@ public class StudentRegistrationPage {
             state = "Uttar Pradesh",
             city = "Merrut";
 
+    final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
+
     @Step("Open students registration form")
     public void openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        open(config.getBaseURL());
     }
 
     @Step("Fill students registration form")

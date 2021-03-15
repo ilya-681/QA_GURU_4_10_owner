@@ -1,5 +1,7 @@
 package test;
 
+import Config.WebConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +19,9 @@ public class FormTestNegativeTests extends TestBase {
     @DisplayName("Negative fill form test with Fakers")
     void dataAfterSubmitForm() {
 
-        open("https://demoqa.com/automation-practice-form");
+        final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
+
+        open(config.getBaseURL());
 
         $("#submit").click();
 

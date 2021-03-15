@@ -1,6 +1,8 @@
 package test;
 
 
+import Config.WebConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,13 +13,16 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class FormTest extends TestBase {
 
     @Test
     @DisplayName("Successful fill form test")
     void dataAfterSubmitForm() {
-        open("https://demoqa.com/automation-practice-form");
+
+        final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
+        open(config.getBaseURL());
         $("#firstName").setValue("Bob");
         $("#lastName").setValue("Jones");
         $("#userEmail").setValue("Jones@ya.ru");
