@@ -14,14 +14,15 @@ public class ConfigurationTest {
     public void configurationTest()
     {
         final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
-        final String localWebDriverURL = "http://localhost:4444";
+
+        /*final String localWebDriverURL = "http://localhost:4444";
         final String companyWebDriverURL = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/";
 
         final String webDriverBrowserChrome = "chrome";
         final String webDriverBrowserFirefox = "firefox";
 
         final String testingBaseURL = "http://testing.github.com";
-        final String devBaseURL = "http://dev.github.com";
+        final String devBaseURL = "http://dev.github.com";*/
 
         assertThat(config.getWebDriverURL()).isEqualTo("http://localhost:4444");
         assertThat(config.getWebDriverBrowser()).isEqualTo("chrome");
