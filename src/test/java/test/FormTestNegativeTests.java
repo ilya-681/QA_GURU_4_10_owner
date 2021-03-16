@@ -1,6 +1,6 @@
 package test;
 
-import Config.WebConfig;
+import config.WebConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

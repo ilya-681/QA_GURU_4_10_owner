@@ -1,6 +1,6 @@
 package test;
 
-import Config.WebConfig;
+import config.WebConfig;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;

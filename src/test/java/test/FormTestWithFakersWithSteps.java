@@ -1,6 +1,6 @@
 package test;
 
-import Config.WebConfig;
+import config.WebConfig;
 import com.github.javafaker.Faker;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;

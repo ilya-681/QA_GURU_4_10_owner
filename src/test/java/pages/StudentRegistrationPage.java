@@ -1,9 +1,8 @@
 package pages;
 
-import Config.WebConfig;
+import config.WebConfig;
 import io.qameta.allure.Step;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.Test;
 
 import java.io.File;
 

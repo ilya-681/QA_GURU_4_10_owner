@@ -1,12 +1,9 @@
-package Config;
+package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        //    "file:/users/credentials.properties",
-        "classpath:${env}.properties"})
-@Config.LoadPolicy(Config.LoadType.FIRST)
-//@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({"classpath:${env}.properties"})
+
 public interface WebConfig extends Config {
 
 
@@ -24,8 +21,5 @@ public interface WebConfig extends Config {
     @DefaultValue("https://demoqa.com/automation-practice-form")
     String getBaseURL();
 
-//    @Key("enabled")
-//    @DefaultValue("true")
-//    Boolean isEnabled();
 
 }
